@@ -1,0 +1,137 @@
+:root {
+    --body: #f6f6f6;
+    --font: rgb(53, 53, 53);
+    --border: #333;
+    --screen: rgb(180, 180, 180);
+    --calculator: rgb(43,44,82);
+    --btn: rgb(80, 80, 80);
+    --btn-hover: rgb(119, 119, 119);
+    --btn-active: #ccc;
+    --btn-orange: rgb(255, 136, 0);
+    --btn-orange-hover: rgb(192, 102, 0);
+    --btn-orange-active: rgb(156, 115, 0);
+    --btn-black: rgb(0, 0, 0);
+    --btn-black-hover: rgb(27, 27, 27);
+    --btn-black-active: rgba(0, 0, 0, 0.342);
+    --btn-red: rgb(255, 0, 0);
+    --btn-red-hover: rgba(167, 0, 0, 0.637);
+    --btn-red-active: rgba(163, 0, 0, 0.342);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  button {
+    color:  rgb(255, 255, 255);
+  }
+  
+  .header {
+    padding: 10px;
+    text-align: center;
+    color: rgb(139, 139, 139);
+    text-shadow: 2px 2px #1abc9c;
+    font-size: 30px;
+  }
+  .calculator {
+    max-width: 400px;
+    border: 2px var(--border) solid;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: var(--calculator);
+    background: linear-gradient(189deg, rgb(71, 71, 71) 0%, rgba(69,71,96,1) 45%, rgba(92,94,111,1) 100%);
+
+  }
+  
+  .history {
+    visibility: hidden;
+  }
+  .screen {
+    min-height: 80px;
+    padding: 0px 20px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: var(--screen);
+    font-size: 25px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+  }
+  
+  .column-2 {
+    grid-column: span 2;
+  }
+  .row-2 {
+    grid-row: span 2;
+  }
+  .btn {
+    padding: 10px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    background-color: var(--btn);
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  .btn:active {
+    background-color: var(--btn-active);
+  }
+
+  .btn-orange {
+    font-size: 30px;
+    background-color: var(--btn-orange);
+  }
+  .btn-orange:hover {
+    background-color: var(--btn-orange-hover);
+  }
+  
+  .btn-orange:active {
+    background-color: var(--btn-orange-active);
+  }
+  .btn-black {
+   background-color: var(--btn-black);
+  }
+  .btn-black:hover {
+    background-color: var(--btn-black-hover);
+  }
+  
+  .btn-black:active {
+    background-color: var(--btn-black-active);
+  }
+
+  .btn-red {
+    background-color: var(--btn-red);
+   }
+   .btn-red:hover {
+     background-color: var(--btn-red-hover);
+   }
+   
+   .btn-red:active {
+     background-color: var(--btn-red-active);
+   }
+  /* Disables input spinners in calc screen */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
