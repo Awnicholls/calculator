@@ -73,14 +73,14 @@
     grid-gap: 5px;
   }
 
- .input, .answer {
+ .user-input, .result {
     width: inherit;
     height: 30px;
     box-sizing: border-box;
     overflow-x: auto;
   }
   
-  .answer {
+  .result {
     text-align: right;
     overflow: hidden;
   }
