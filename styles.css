@@ -43,26 +43,26 @@
   .calculator {
     max-width: 400px;
     border: 2px var(--border) solid;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 10px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--calculator);
     background: linear-gradient(189deg, rgb(71, 71, 71) 0%, rgba(69,71,96,1) 45%, rgba(92,94,111,1) 100%);
 
   }
-  
+
   .history {
     visibility: hidden;
   }
   .screen {
-    min-height: 80px;
-    padding: 0px 20px;
+    min-height: 60px;
+    padding: 0px 5px;
     border: 2px var(--border) solid;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: var(--screen);
     font-size: 25px;
-    text-align: right;
+    /* text-align: right; */
     word-wrap: break-word;
     word-break: break-all;
   }
@@ -71,6 +71,18 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
+  }
+
+ .input, .answer {
+    width: inherit;
+    height: 30px;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  
+  .answer {
+    text-align: right;
+    overflow: hidden;
   }
   
   .column-2 {
@@ -130,8 +142,8 @@
      background-color: var(--btn-red-active);
    }
   /* Disables input spinners in calc screen */
-  input[type="number"]::-webkit-inner-spin-button,
+  /* input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
+  } */
