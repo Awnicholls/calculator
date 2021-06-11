@@ -51,4 +51,6 @@ function appendNumber(number) {
     userInput.textContent += ".";
   }
 
-  function operate()
+  function operate(){
+      
+  };
