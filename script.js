@@ -24,20 +24,20 @@ updateDisplay();
 
 function add(a, b) {
     return a + b;
-}
+};
 
 function substract(a, b) {
     return a - b;
-}
+};
 
 function multiply(a, b) {
     return a * b;
-}
+};
 
 function divide(a, b) {
     return a / b;
-}
-// window.addEventListener("keydown", setInput);
+};
+window.addEventListener("keydown", setInput);
 equalsButton.addEventListener("click", handleOperator);
 clearButton.addEventListener("click", clear);
 deleteButton.addEventListener("click", deleteNumber);
@@ -48,7 +48,7 @@ operatorButton.forEach((button) =>
 function resetScreen() {
   userInput.textContent = "";
   result.textContent = "";
-}
+};
 
 function deleteNumber() {
   userInput.textContent = userInput.textContent.toString().slice(0, -1);
@@ -59,7 +59,7 @@ function deleteNumber() {
 
 function updateResult() {
   result.textContent = calculator.firstOperand;
-}
+};
 function clear() {
   userInput.textContent = "";
   result.textContent = "";
@@ -69,7 +69,7 @@ function clear() {
   calculator.operator = null;
   calculator.waitingForSecondOperand = false;
   console.log(calculator);
-}
+};
 
 numberButton.forEach((button) =>
   button.addEventListener("click", () => appendNumber(button.textContent))
@@ -97,7 +97,7 @@ function appendNumber(number) {
 
   function resetScreen() {
     userInput.textContent = "";
-  }
+  };
   
 function appendDecimal() {
   // if (calculator.waitingForSecondOperand === true) {
@@ -113,7 +113,7 @@ function appendDecimal() {
     calculator.userInput += ".";
     console.log(calculator);
     updateDisplay();
-  }
+  };
 
 
 
@@ -144,7 +144,7 @@ function handleOperator(nextOperator) {
   
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
-  }
+  };
 
 
 
@@ -159,9 +159,32 @@ function handleOperator(nextOperator) {
       case "×":
         return multiply(a, b);
       case "÷":
-        if (b === 0) return null;
+        if (b === 0) 
+         return null, alert("No can do");
         else return divide(a, b);
       default:
         return secondOperand;
     }
-  }
+  };
+  
+function setInput(e) {
+  if (e.key >= 0 && e.key <= 9) appendNumber(e.key);
+  if (e.key === ".") appendDecimal();
+  if (e.key === "=" || e.key === "Enter") handleOperator();
+  if (e.key === "Backspace") deleteNumber();
+  if (e.key === "Escape") clear();
+  if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/")
+    handleOperator(convertOperator(e.key));
+}
+
+function convertOperator(keyboardOperator) {
+  if (keyboardOperator === "/") return "÷";
+  if (keyboardOperator === "*") return "×";
+  if (keyboardOperator === "-") return "−";
+  if (keyboardOperator === "+") return "+";
+}
+  
+  
+  
+  
+  
