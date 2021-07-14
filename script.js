@@ -76,14 +76,12 @@ numberButton.forEach((button) =>
 
 function appendNumber(number) {
   const { waitingForSecondOperand } = calculator;
-
   if (waitingForSecondOperand === true) {
     resetScreen();
     calculator.userInput = userInput.textContent += number;
     calculator.waitingForSecondOperand = false;
   } else {
-    calculator.userInput =
-      calculator.userInput === "0" ? number : (calculator.userInput += number);
+     calculator.userInput === "0" ? number : (calculator.userInput += number);
   }
   updateDisplay();
   console.log(calculator);
@@ -140,7 +138,7 @@ function calculate(firstOperand, secondOperand, operator) {
     case "×":
       return multiply(a, b);
     case "÷":
-      if (b === 0) return null, alert("No can do");
+      if (b === 0) return 0;
       else return divide(a, b);
     default:
       return secondOperand;
